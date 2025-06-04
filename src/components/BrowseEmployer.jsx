@@ -19,7 +19,7 @@ const BrowseEmployers = () => {
       return alert("message, senderId and ReciverId are required");
     }
     try {
-      await axios.post("http://54.175.255.7:5000/api/message/send", {
+      await axios.post("https://house-help-server.onrender.com/api/message/send", {
         senderId,
         receiverId,
         content: message,
@@ -90,7 +90,7 @@ const BrowseEmployers = () => {
                     {employer.image ? (
                       <img
                         className="rounded-xl opacity-60 object-cover w-full h-full"
-                        src={`http://54.175.255.7:5000/employeruploads/${employer.image}`}
+                        src={`https://house-help-server.onrender.com/employeruploads/${employer.image}`}
                         alt={employer.name}
                       />
                     ) : (

@@ -19,7 +19,7 @@ const BrowseHouseHelp = () => {
     setMessage("");
     if (message === "") return alert("Message must not be empty");
     try {
-      await axios.post("http://54.175.255.7:5000/api/message/send", {
+      await axios.post("https://house-help-server.onrender.com/api/message/send", {
       senderId,
       receiverId,
       content: message,
@@ -83,7 +83,7 @@ const BrowseHouseHelp = () => {
                     {help.image ? (
                       <img
                         className="rounded-xl opacity-60 object-cover w-full h-full"
-                        src={`http://54.175.255.7:5000/employeeuploads/${help.image}`}
+                        src={`https://house-help-server.onrender.com/employeeuploads/${help.image}`}
                         alt={help.name}
                       />
                     ) : (

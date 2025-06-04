@@ -11,7 +11,7 @@ const Protected = ({ children }) => {
     const verifyToken = async () => {
       try {
         const res = await axios.post(
-          "http://54.175.255.7:5000/api/verify-token",
+          "https://house-help-server.onrender.com/api/verify-token",
           {},
           {
             headers: {

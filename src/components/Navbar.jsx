@@ -26,7 +26,7 @@ const Navbar = () => {
     e.preventDefault();
     try {
       setIsLoading(true);
-      const response = await axios.post("http://54.175.255.7:5000/api/login", {
+      const response = await axios.post("https://house-help-server.onrender.com/api/login", {
         password,
         email,
       });

@@ -13,7 +13,7 @@ useEffect(()=>{console.log('seperate effect',messages)}, [messages])
   // Fetch all users to chat with
   useEffect(() => {
     const fetchUsers = async () => {
-      const response = await axios.get(`http://54.175.255.7:5000/api/message/conversations?userId=${loggedUser.userId}`)
+      const response = await axios.get(`https://house-help-server.onrender.com/api/message/conversations?userId=${loggedUser.userId}`)
       const sender = response.data.receivedFrom;
       // console.log('this is sender,',sender)
       const receiver = response.data.sentTo
@@ -21,7 +21,7 @@ useEffect(()=>{console.log('seperate effect',messages)}, [messages])
       const conversations = [...new Set([...sender, ...receiver])].join(',')
       // console.log(conversations)
 
-      const conversationsDetails = await axios.get(`http://54.175.255.7:5000/api/message/conversations/details?userId=${conversations}`)
+      const conversationsDetails = await axios.get(`https://house-help-server.onrender.com/api/message/conversations/details?userId=${conversations}`)
       // console.log('this is converations user details: ',conversationsDetails.data.users)
       if(conversationsDetails?.data.users.length>0){  
         setUsers(conversationsDetails.data.users)
@@ -35,7 +35,7 @@ useEffect(()=>{console.log('seperate effect',messages)}, [messages])
     const fetchMessages = async () => {
       if (!selectedUser) return;
       try {
-        const res = await axios.get("http://54.175.255.7:5000/api/message/read", {
+        const res = await axios.get("https://house-help-server.onrender.com/api/message/read", {
           params: {
             senderId: loggedUser.userId,
             receiverId: selectedUser._id
@@ -53,7 +53,7 @@ useEffect(()=>{console.log('seperate effect',messages)}, [messages])
     if (!newMessage.trim() || !selectedUser) return;
 
     try {
-      await axios.post("http://54.175.255.7:5000/api/message/send", {
+      await axios.post("https://house-help-server.onrender.com/api/message/send", {
         senderId: loggedUser.userId,
         receiverId: selectedUser._id,
         content: newMessage

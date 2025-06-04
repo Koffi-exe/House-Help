@@ -36,7 +36,7 @@ const RegisterEmployer = () => {
     }
     try {
       const response = await axios.post(
-        "http://54.175.255.7:5000/api/register/employer",
+        "https://house-help-server.onrender.com/api/register/employer",
         form,
         {
           headers: {

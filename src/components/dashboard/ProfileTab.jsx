@@ -27,7 +27,7 @@ const ProfileTab = ({ user }) => {
             className="h-2/3 bg-center bg-cover rounded-tr-xl"
             style={{
               backgroundImage: image
-                ? `url(http://54.175.255.7:5000/${
+                ? `url(https://house-help-server.onrender.com/${
                     userType === "Employer"
                       ? "employeruploads"
                       : "employeeuploads"
