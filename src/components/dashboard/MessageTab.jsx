@@ -80,7 +80,7 @@ useEffect(()=>{console.log('seperate effect',messages)}, [messages])
           <div
             key={user._id}
             onClick={() => setSelectedUser(user)}
-            className={`p-2 cursor-pointer rounded hover:bg-blue-200 ${selectedUser?._Id === user._Id ? "bg-blue-300" : ""}`}
+            className={`p-2 cursor-pointer rounded hover:bg-blue-200 ${selectedUser?._id === user._id ? "bg-blue-300" : ""}`}
           >
             {user.name}
           </div>
