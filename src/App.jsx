@@ -28,6 +28,11 @@ useEffect(()=>{
   if(loggeduser){
     initApp()
   }
+})
+
+useEffect(()=>{
+  alert('If using mobile, switch to desktop site, the backend crashes sometimes as it is in free tier')
+  alert('Working features, register, login, message.')
 },[])
 
   return (
